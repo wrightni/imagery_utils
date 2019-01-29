@@ -661,13 +661,10 @@ def calcStats(args, info):
     elif info.stretch == 'rf':
         if args.outtype == "Byte":
             omax = 200.0
-            omin = 2.0
         elif args.outtype == "UInt16":
             omax = 2000.0
-            omin = 2.0
         elif args.outtype == "Float32":
             omax = 1.0
-            omin = 0.02
 
     #### Stretch
     if info.stretch != "ns":
@@ -696,7 +693,7 @@ def calcStats(args, info):
                     calfact,offset = CFlist[band-1]
                     if info.stretch == "rf":
                         # LUT = "0:{},{}:{}".format(offset*omax, imax, (imax*calfact+offset)*omax)
-                        LUT = "0:{},{}:{}".format(omin, imax, imax * calfact * omax + omin)
+                        LUT = "0:{},{}:{}".format(0, imax, imax * calfact * omax)
                     elif info.stretch == "rd":
                         LUT = "0:{},{}:{}".format(offset, imax, imax*calfact+offset)
                     elif info.stretch == "mr":
