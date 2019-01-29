@@ -660,7 +660,7 @@ def calcStats(args, info):
             omax = 1.0
     elif info.stretch == 'rf':
         if args.outtype == "Byte":
-            omax = 200.0
+            omax = 250.0
         elif args.outtype == "UInt16":
             omax = 2000.0
         elif args.outtype == "Float32":
