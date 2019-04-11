@@ -752,7 +752,7 @@ def calcStats(args, info):
 
     pf = platform.platform()
     if pf.startswith("Linux"):
-        config_options = '--config GDAL_CACHEMAX 2048'
+        config_options = '--config GDAL_CACHEMAX "10%"'
     else:
         config_options = ''
 
