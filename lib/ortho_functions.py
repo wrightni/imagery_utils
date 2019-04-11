@@ -1260,9 +1260,9 @@ def WarpImage(args, info):
 
     pf = platform.platform()
     if pf.startswith("Linux"):
-        config_options = '-wm 2000 --config GDAL_CACHEMAX 2048 --config GDAL_NUM_THREADS 1'
+        config_options = '-wm 2000 --config GDAL_CACHEMAX "10%" --config GDAL_NUM_THREADS 6'
     else:
-        config_options = '--config GDAL_NUM_THREADS 1'
+        config_options = '--config GDAL_NUM_THREADS 6'
 
     if not os.path.isfile(info.warpfile):
 
